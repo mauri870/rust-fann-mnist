@@ -1,0 +1,40 @@
+[[package]]
+name = "byteorder"
+version = "1.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "fann"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "fann-sys 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.47 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "fann-mnist-rust"
+version = "0.1.0"
+dependencies = [
+ "byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "fann 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "fann-sys"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.47 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.47"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[metadata]
+"checksum byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "94f88df23a25417badc922ab0f5716cc1330e87f71ddd9203b3a3ccd9cedf75d"
+"checksum fann 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)" = "504c2e3de3803f638a25099f926316fd6982cf9991c3792ea37cd8230ec51cb6"
+"checksum fann-sys 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)" = "4b79414cf285f29feed2dbfd30efed837d0523ffee8beb1c7d031f1fcb1bd2af"
+"checksum libc 0.2.47 (registry+https://github.com/rust-lang/crates.io-index)" = "48450664a984b25d5b479554c29cc04e3150c97aa4c01da5604a2d4ed9151476"
