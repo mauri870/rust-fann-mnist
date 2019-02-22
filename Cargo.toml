@@ -1,0 +1,9 @@
+[package]
+name = "fann-mnist-rust"
+version = "0.1.0"
+authors = ["Mauri de Souza Nunes <mauri870@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+fann = "0.1"
+byteorder = "1.2"
