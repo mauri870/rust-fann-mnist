@@ -1,15 +1,16 @@
 use fann::{Fann};
+use std::error::Error;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-fn main() {
+fn main() -> Result<(), Box<dyn Error>> {
     let mut features = vec![];
     let mut errors = 0;
     let mut correct = 0;
 
-    let fann = Fann::from_file("checkpoints/mnist.net").expect("Failed to read checkpoint file");
+    let fann = Fann::from_file("checkpoints/mnist.net")?;
 
-    let f = File::open("test.fann").expect("Failed to read test data");
+    let f = File::open("test.fann")?;
     let f = BufReader::new(&f);
     for line in f.lines() {
         let line = line.unwrap();
@@ -46,4 +47,6 @@ fn main() {
     eprintln!("Correct: {}", correct);
     eprintln!("Errors: {}", errors);
     eprintln!("Accuracy: {:.2}%", correct as f32 * 100.0 / total as f32);
+
+    Ok(())
 }

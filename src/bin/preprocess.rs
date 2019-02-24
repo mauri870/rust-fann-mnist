@@ -6,15 +6,14 @@ use std::io::BufWriter;
 use std::path::Path;
 
 // TODO: Try to use the mnist crate here
-fn main() {
+fn main() -> Result<(), Box<dyn Error>> {
     eprintln!("Converting mninst binary train data to fann format...");
     convert_mnist_to_fann(
         "data/train-images-idx3-ubyte",
         "data/train-labels-idx1-ubyte",
         "train.fann",
     )
-    .map_err(|err| format!("Failed to convert train images and labels: {}", err))
-    .unwrap();
+    .map_err(|err| format!("Failed to convert train images and labels: {}", err))?;
     eprintln!("Ok");
 
     eprintln!("Converting mninst binary test data to fann format...");
@@ -23,9 +22,9 @@ fn main() {
         "data/t10k-labels-idx1-ubyte",
         "test.fann",
     )
-    .map_err(|err| format!("Failed to convert t10k images and labels: {}", err))
-    .unwrap();
+    .map_err(|err| format!("Failed to convert t10k images and labels: {}", err))?;
     eprintln!("Ok");
+    Ok(())
 }
 
 fn convert_mnist_to_fann<P: AsRef<Path>>(
