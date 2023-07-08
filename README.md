@@ -20,10 +20,10 @@ First you need to download the mnist dataset, for that run the following command
 
 ```bash
 mkdir -p data
-NAMES=(train-images-idx3-ubyte train-labels-idx1-ubyte t10k-images-idx3-ubyte t10k-labels-idx1-ubyte)
+NAMES="train-images-idx3-ubyte train-labels-idx1-ubyte t10k-images-idx3-ubyte t10k-labels-idx1-ubyte"
 for n in $NAMES; do
     echo "Downloading $n..."
-    wget -qO- http://yann.lecun.com/exdb/mnist/$n.gz --show-progress | gunzip -c > data/$n
+    wget -qO- http://yann.lecun.com/exdb/mnist/$n.gz | gunzip -c > data/$n
 done
 ```
 
